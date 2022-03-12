@@ -10,7 +10,7 @@ class Menu(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=45)
-    menu = models.ForeignKey("Menu", on_delete=models.CASCADE)
+    menu = models.ForeignKey("Mengeru", on_delete=models.CASCADE)
 
     class Meta:
         db_table = "categories"
@@ -18,7 +18,7 @@ class Category(models.Model):
 class Drink(models.Model):
     korean_name = models.CharField(max_length=45)
     english_name = models.CharField(max_length=45)
-    description = models.TextField
+    description = models.TextField(default ="")
     category = models.ForeignKey("Category", on_delete=models.CASCADE)
 
     class Meta:
